@@ -3,7 +3,7 @@ import { Button } from './ui/button'
 
 export default function ManageMeeting() {
   return (
-    <section className="container mx-auto mt-32 flex justify-between px-10">
+    <section className="container mx-auto mt-32 flex justify-between px-6 md:px-10">
       <div className="flex flex-col gap-28">
         <div className="text-white/90 tracking-[2%]">
           <p className="text-4xl leading-[130%]">
@@ -21,7 +21,7 @@ export default function ManageMeeting() {
       </div>
       <div className="flex justify-center">
         <Image
-          src="/images/network.png"
+          src="/images/network.webp"
           alt="Edith managing meetings"
           className=""
           width={600}

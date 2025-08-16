@@ -3,7 +3,7 @@ import { Button } from './ui/button'
 
 export default function Footer() {
   return (
-    <footer className="container mx-auto mt-60 px-10">
+    <footer className="container mx-auto mt-60 px-6 md:px-10">
       <div className="flex flex-col gap-4">
         <p className="text-4xl font-bold">Join the Waitlist</p>
         <p className="text-white/75">

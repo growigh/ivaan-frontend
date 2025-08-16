@@ -3,7 +3,7 @@ import { Button } from './ui/button'
 
 export default function BetterMeeting() {
   return (
-    <section className="container mx-auto mt-40 px-20">
+    <section className="container mx-auto mt-40 px-6 md:px-20">
       <h2 className="text-primary text-4xl tracking-[2%] font-semibold">
         Everything You Need for Better Meetings
       </h2>
@@ -45,7 +45,7 @@ export default function BetterMeeting() {
 
       <div className="flex mt-40 justify-between">
         <div className='flex-2/3'>
-          <Image src="/images/points.png" width={500} height={380} alt="Points" />
+          <Image src="/images/points.webp" width={500} height={380} alt="Points" />
         </div>
 
         <div className="inline-block space-y-6 flex-1/3 self-center">

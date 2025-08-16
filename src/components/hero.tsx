@@ -5,11 +5,11 @@ import { Button } from './ui/button'
 export default function Hero() {
   return (
     <section className="text-center mt-24">
-      <h1 className="text-6xl font-heading !leading-[140%] font-semibold tracking-[2%]">
+      <h1 className="text-4xl md:text-6xl font-heading !leading-[140%] font-semibold tracking-[2%]">
         Edith, Your Personal AI
         <br /> Meeting Assistant
       </h1>
-      <p className="text-lg mt-8">
+      <p className="text-base md:text-lg mt-8">
         AI assistant that remembers, connects and talks about all your meetings.
       </p>
       <div className="flex gap-5 justify-center w-full mt-16">
@@ -36,7 +36,7 @@ export default function Hero() {
         </div>
         <Button>Get Early Access</Button>
       </div>
-      <div className="text-lg text-gray-500 tracking-[2%] mt-12">
+      <div className="text-sm md:text-lg text-gray-500 tracking-[2%] mt-12">
         First 100 Users will get{' '}
         <span className="text-white">Lifetime 50% Off</span>
       </div>
