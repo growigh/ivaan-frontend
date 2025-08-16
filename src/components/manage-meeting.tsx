@@ -1,0 +1,33 @@
+import Image from 'next/image'
+import { Button } from './ui/button'
+
+export default function ManageMeeting() {
+  return (
+    <section className="container mx-auto mt-32 flex justify-between px-10">
+      <div className="flex flex-col gap-28">
+        <div className="text-white/90 tracking-[2%]">
+          <p className="text-4xl leading-[130%]">
+            Manage Hundreds of
+            <br /> meetings with
+          </p>
+          <p className="font-bold text-6xl mt-4">Edith</p>
+        </div>
+        <div className="">
+          <Button>Get early Access</Button>
+          <p className="text-white/70 mt-4">
+            Stay on top of every conversation without breaking a sweat.
+          </p>
+        </div>
+      </div>
+      <div className="flex justify-center">
+        <Image
+          src="/images/network.png"
+          alt="Edith managing meetings"
+          className=""
+          width={600}
+          height={380}
+        />
+      </div>
+    </section>
+  )
+}
