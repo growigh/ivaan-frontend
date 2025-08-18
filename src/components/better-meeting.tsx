@@ -3,62 +3,64 @@ import { Button } from './ui/button'
 
 export default function BetterMeeting() {
   return (
-    <section className="container mx-auto mt-40 px-6 md:px-20">
-      <h2 className="text-primary text-4xl tracking-[2%] font-semibold">
+    <section className="container mx-auto mt-30 md:mt-40 px-6 lg:px-20">
+      <h2 className="text-primary text-4xl md:text-[40px] md:tracking-[2%] font-semibold text-center md:text-left">
         Everything You Need for Better Meetings
       </h2>
-      <p className="text-xl text-white/75 mt-4">
+      <p className="text-base md:text-xl text-white/75 mt-4 text-center md:text-left">
         Features built for clarity, speed, and smarter outcomes.
       </p>
 
       <div className="flex mt-26">
         <div></div>
 
-        <div className="inline-block space-y-6">
-          <p className="text-4xl text-white/60 tracking-[2%] leading-[130%] font-bold uppercase">
-            High Quality <br />
-              <span className=" text-white/90">Notes</span>
+        <div className="inline-block">
+          <p className="text-[28px] md:text-[32px] text-white/60 tracking-[2%] leading-[130%] font-bold uppercase">
+            High Quality
+            <span className="text-white/90 md:block"> Notes</span>
           </p>
-          <p className="text-xl text-white/75">
-            Only the details that matter,
-            <br /> perfectly captured.
+          <p className="text-base mt-2 md:mt-6 md:text-xl text-white/75 pr-4">
+            Only the details that matter, perfectly captured.
           </p>
-          <Button>Join the Waitlist</Button>
+          <Button className='mt-8'>Join the Waitlist</Button>
         </div>
       </div>
 
       <div className="mt-40">
-        <div className="inline-block space-y-6 self-center">
-          <p className="text-4xl text-white/60 tracking-[2%] leading-[130%] font-bold uppercase">
+        <div className="inline-block self-center">
+          <p className="text-[28px] md:text-[32px] text-white/60 tracking-[2%] leading-[130%] font-bold uppercase">
             Accurate
-            <br />
-            <span className=" text-white/90">Transcripts</span>
+            <span className="text-white/90 md:block"> Transcripts</span>
           </p>
-          <p className="text-xl text-white/75">
+          <p className="text-base mt-2 md:mt-6 md:text-xl text-white/75">
             Every word, captured and crystal clear.
           </p>
-          <Button>Get early Access</Button>
+          <Button className='mt-8'>Get early Access</Button>
         </div>
 
         <div></div>
       </div>
 
-      <div className="flex mt-40 justify-between">
-        <div className='flex-2/3'>
-          <Image src="/images/points.webp" width={500} height={380} alt="Points" />
+      <div className="flex flex-col md:flex-row mt-40 gap-16 lg:gap-0">
+        <div className="flex-1/2 lg:flex-2/3 flex items-center justify-center">
+          <Image
+            src="/images/points.webp"
+            width={500}
+            height={380}
+            className='md:w-[340px] lg:w-[500px]'
+            alt="Points"
+          />
         </div>
 
-        <div className="inline-block space-y-6 flex-1/3 self-center">
-          <p className="text-4xl text-white/60 tracking-[2%] leading-[130%] font-bold uppercase">
+        <div className="inline-block flex-1/2 lg:flex-1/3 self-center">
+          <p className="text-[28px] md:text-[32px] text-white/60 tracking-[2%] leading-[130%] font-bold uppercase">
             Clarity That
-            <br />
-            <span className=" text-white/90">Connects</span>
+            <span className="text-white/90 md:block"> Connects</span>
           </p>
-          <p className="text-xl text-white/75">
-            Where intelligent insights meet
-            <br /> effortless meeting management.
+          <p className="text-base mt-2 md:mt-6 md:text-xl text-white/75 pr-4">
+            Where intelligent insights meet effortless meeting management.
           </p>
-          <Button>Join the Waitlist</Button>
+          <Button className='mt-8'>Join the Waitlist</Button>
         </div>
       </div>
     </section>
