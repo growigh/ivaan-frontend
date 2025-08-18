@@ -10,12 +10,12 @@ export default function Footer() {
           First 100 Users will get Lifetime 50% Off
         </p>
       </div>
-      <div className="flex flex-row gap-4 mt-14">
-        <div className="relative rounded-xl border">
+      <div className="flex sm:flex-row flex-col gap-4 mt-10 sm:mt-12 md:mt-14">
+        <div className="relative rounded-xl border md:w-106">
           <input
             type="email"
             placeholder="Enter your email"
-            className="px-4 py-2 rounded-xl w-106 focus:outline-none"
+            className="px-4 py-2 rounded-xl w-full focus:outline-none"
           />
           <BorderBeam
             duration={8}
@@ -26,7 +26,7 @@ export default function Footer() {
         </div>
         <Button>Get Early Access</Button>
       </div>
-      <div className="text-white/70 text-sm mt-40 pb-10">
+      <div className="text-white/70 text-sm mt-20 sm:mt-24 md:mt-40 pb-10">
         &copy; {new Date().getFullYear()} Growigh
       </div>
     </footer>

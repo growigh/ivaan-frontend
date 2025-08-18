@@ -11,7 +11,7 @@ export default function Path() {
         From start to finish, Edith has you covered.
       </p>
 
-      <div className="flex mt-26 gap-12">
+      <div className="flex flex-col sm:flex-row mt-26 gap-12">
         <div className="p-12 border-2 border-white/15 rounded-3xl">
           <p className="text-2xl text-white/90">Connect Your Calendar</p>
           <p className="font-light text-white/75 pt-5">
