@@ -1,44 +1,49 @@
-import Image from 'next/image'
+import ArrowRight from './svg/arrow-right'
 import { Button } from './ui/button'
 
 export default function Path() {
   return (
-    <section className="container mx-auto mt-45 px-2">
-      <h2 className="text-primary text-4xl tracking-[2%] font-semibold">
+    <section className="container mx-auto mt-45 px-6">
+      <h2 className="text-primary text-3xl md:text-4xl tracking-[2%] font-semibold">
         Your Path to Better Meetings
       </h2>
-      <p className="text-xl text-white/75 mt-4">
+      <p className="text-base md:text-xl text-white/75 mt-2 md:mt-4">
         From start to finish, Edith has you covered.
       </p>
 
-      <div className="flex flex-col md:flex-row mt-26 gap-12">
-        <div className="p-12 border-2 border-white/15 rounded-3xl">
-          <p className="text-2xl text-white/90">Connect Your Calendar</p>
-          <p className="font-light text-white/75 pt-5">
+      <div className="flex flex-col lg:flex-row mt-13 sm:mt-16 lg:mt-26 gap-6 md:gap-5 lg:gap-12">
+        <div className="p-10 lg:p-12 border-2 border-white/15 rounded-3xl">
+          <p className="text-xl lg:text-2xl text-white/90">
+            Connect Your Calendar
+          </p>
+          <p className="font-light text-sm lg:text-base text-white/75 pt-5">
             Ask about meeting details, topics, and goals, just like chatting
             with a assistant.
           </p>
         </div>
 
-        <div className="p-12 border-2 border-white/15 rounded-3xl">
-          <p className="text-2xl text-white/90">Talk to Edith</p>
-          <p className="font-light text-white/75 pt-5">
+        <div className="p-10 lg:p-12 border-2 border-white/15 rounded-3xl">
+          <p className="text-xl lg:text-2xl text-white/90">Talk to Edith</p>
+          <p className="font-light text-sm lg:text-base text-white/75 pt-5">
             Link your Google, Outlook, or other calendar so Edith knows your
             schedule.
           </p>
         </div>
 
-        <div className="p-12 border-2 border-white/15 rounded-3xl">
-          <p className="text-2xl text-white/90">Let Edith Deliver</p>
-          <p className="font-light text-white/75 pt-5">
+        <div className="p-10 lg:p-12 border-2 border-white/15 rounded-3xl">
+          <p className="text-xl lg:text-2xl text-white/90">Let Edith Deliver</p>
+          <p className="font-light text-sm lg:text-base text-white/75 pt-5">
             Get high quality notes, action items, and transcripts instantly
             after every meeting.
           </p>
         </div>
       </div>
 
-      <div className='mt-11 flex justify-end'>
-        <Button className="self-end">Get early Access</Button>
+      <div className="mt-6 md:mt-8 lg:mt-11 flex justify-end">
+        <Button className="w-full md:w-fit text-left max-md:rounded-full flex justify-between items-center bg-gradient-to-tr from-[#2D8CFF] to-[#1B5499]">
+          <p className="">Get Early Access</p>
+          <ArrowRight className="lg:hidden" />
+        </Button>
       </div>
     </section>
   )

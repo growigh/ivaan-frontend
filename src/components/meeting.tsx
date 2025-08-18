@@ -37,7 +37,7 @@ export default function Meeting() {
             alt="Meeting Image"
             width={480}
             height={480}
-            className="rounded-4xl h-[278px] sm:w-full sm:max-h-[320px] md:h-full md:w-[278px] lg:w-[480px] lg:max-h-[480px] object-cover"
+            className="rounded-4xl h-[278px] sm:w-full sm:max-h-[320px] mx-auto md:h-full md:w-[278px] lg:w-[480px] lg:max-h-[480px] object-cover"
           />
         </div>
       </div>

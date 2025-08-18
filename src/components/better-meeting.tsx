@@ -41,8 +41,8 @@ export default function BetterMeeting() {
         <div></div>
       </div>
 
-      <div className="flex flex-col md:flex-row mt-40 gap-16 lg:gap-0">
-        <div className="flex-1/2 lg:flex-2/3 flex items-center justify-center">
+      <div className="flex flex-col md:flex-row mt-40 gap-16 md:gap-0">
+        <div className="flex-[60%] lg:flex-2/3 flex items-center justify-center">
           <Image
             src="/images/points.webp"
             width={500}
@@ -52,7 +52,7 @@ export default function BetterMeeting() {
           />
         </div>
 
-        <div className="inline-block flex-1/2 lg:flex-1/3 self-center">
+        <div className="inline-block flex-[40%] lg:flex-1/3 self-center">
           <p className="text-[28px] md:text-[32px] text-white/60 tracking-[2%] leading-[130%] font-bold uppercase">
             Clarity That
             <span className="text-white/90 md:block"> Connects</span>
