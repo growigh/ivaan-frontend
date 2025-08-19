@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function Meeting() {
   return (
-    <section className="container mx-auto px-6 lg:px-20 flex flex-col md:flex-row justify-between mt-31 md:mt-37">
+    <section className="container mx-auto px-6 lg:px-20 flex flex-col md:flex-row justify-between mt-31 md:mt-40">
       <div>
         <h2 className="text-3xl sm:text-2xl-4xl text-center md:text-left lg:text-5xl font-semibold leading-[110%]">
           Edith Connect All Your
