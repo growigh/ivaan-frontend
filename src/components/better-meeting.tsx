@@ -1,7 +1,40 @@
+'use client'
+
+import { motion } from 'motion/react'
 import Image from 'next/image'
+import { useCallback, useState } from 'react'
+import TypewriterText from './typewriter-text'
 import { Button } from './ui/button'
 
 export default function BetterMeeting() {
+  const [completedChats, setCompletedChats] = useState<number[]>([])
+  
+  const handleChatComplete = useCallback((index: number) => {
+    setCompletedChats(prev => {
+      if (!prev.includes(index)) {
+        return [...prev, index]
+      }
+      return prev
+    })
+  }, [])
+  
+  const chatData = [
+    {
+      time: "[00:00]",
+      speaker: "Alex",
+      message: "Thanks for joining. Alright, let’s get started. Goal today is to lock MVP scope and timeline."
+    },
+    {
+      time: "[00:12]",
+      speaker: "Mia",
+      message: "Cool. I’ve got the latest note-taking flow and the context panel mock."
+    },
+    {
+      time: "[00:20]",
+      speaker: "Marco",
+      message: "Quick tech update before that before that transcription latency's around two-is seconds per utterance on our current setup."
+    },
+  ]
   return (
     <section className="container mx-auto mt-30 md:mt-40 px-6 lg:px-20">
       <h2 className="text-primary text-4xl md:text-[40px] md:tracking-[2%] font-semibold text-center md:text-left">
@@ -26,7 +59,7 @@ export default function BetterMeeting() {
         </div>
       </div>
 
-      <div className="mt-40">
+      <div className="mt-40 flex justify-between flex-col md:flex-row gap-24 md:gap-24">
         <div className="inline-block self-center">
           <p className="text-[28px] md:text-[32px] text-white/60 tracking-[2%] leading-[130%] font-bold uppercase">
             Accurate
@@ -38,7 +71,60 @@ export default function BetterMeeting() {
           <Button className='mt-8'>Get early Access</Button>
         </div>
 
-        <div></div>
+        <motion.div 
+          className='border rounded-3xl p-4 lg:p-6 max-w-xl flex gap-3 flex-col text-sm lg:text-base min-h-56'
+          layout
+          transition={{ 
+            duration: 0.6, 
+            ease: "easeInOut",
+            layout: { duration: 0.6, ease: "easeInOut" }
+          }}
+        >
+          {chatData.map((chat, index) => {
+            const shouldStart = index === 0 || completedChats.includes(index - 1)
+            const isCurrentlyTyping = shouldStart && !completedChats.includes(index)
+            const shouldShowMessage = completedChats.includes(index) || isCurrentlyTyping
+            
+            return (
+              <motion.div 
+                className='' 
+                key={index}
+                layout
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ 
+                  opacity: shouldShowMessage ? 1 : 0,
+                  height: shouldShowMessage ? "auto" : 0
+                }}
+                transition={{ 
+                  duration: 0.4, 
+                  ease: "easeInOut",
+                  layout: { duration: 0.4, ease: "easeInOut" }
+                }}
+              >
+                {shouldShowMessage ? (
+                  <>
+                    <span className='text-muted'>{chat.time}</span>
+                    <span className='mx-1 font-bold'>{chat.speaker}:</span>
+                    <TypewriterText 
+                      text={chat.message}
+                      delay={index === 0 ? 500 : 200}
+                      speed={20}
+                      shouldStart={shouldStart}
+                      onComplete={() => handleChatComplete(index)}
+                      className=""
+                    />
+                  </>
+                ) : (
+                  <div className="invisible">
+                    <span className='text-muted'>{chat.time}</span>
+                    <span className='mx-1 font-bold'>{chat.speaker}:</span>
+                    <span>{chat.message}</span>
+                  </div>
+                )}
+              </motion.div>
+            )
+          })}
+        </motion.div>
       </div>
 
       <div className="flex flex-col md:flex-row mt-40 gap-16 md:gap-0">
