@@ -41,13 +41,13 @@ export default function BetterMeeting() {
         <div></div>
       </div>
 
-      <div className="flex flex-col md:flex-row mt-40 gap-16 md:gap-0">
+      <div className="flex flex-col md:flex-row mt-40 gap-16 md:gap-0 lg:gap-20">
         <div className="flex-[60%] lg:flex-2/3 flex items-center justify-center">
           <Image
             src="/images/points.webp"
-            width={500}
+            width={560}
             height={380}
-            className='md:w-[340px] lg:w-[500px]'
+            className='md:w-[340px] lg:w-[560px]'
             alt="Points"
           />
         </div>
