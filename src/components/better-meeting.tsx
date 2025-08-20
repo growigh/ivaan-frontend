@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useCallback, useState } from 'react'
 import TypewriterText from './typewriter-text'
 import { Button } from './ui/button'
+import AppearOnScroll from './appear-on-scroll'
 
 export default function BetterMeeting() {
   const [completedChats, setCompletedChats] = useState<number[]>([])
@@ -36,7 +37,7 @@ export default function BetterMeeting() {
     },
   ]
   return (
-    <section className="container mx-auto mt-30 md:mt-40 px-6 lg:px-20">
+    <AppearOnScroll className="container mx-auto mt-30 md:mt-40 px-6 lg:px-20" amount={0.2}>
       <h2 className="text-primary text-4xl md:text-[40px] md:tracking-[2%] font-semibold text-center md:text-left">
         Everything You Need for Better Meetings
       </h2>
@@ -149,6 +150,6 @@ export default function BetterMeeting() {
           <Button className='mt-8'>Join the Waitlist</Button>
         </div>
       </div>
-    </section>
+  </AppearOnScroll>
   )
 }

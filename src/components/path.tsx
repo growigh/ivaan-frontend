@@ -1,9 +1,10 @@
 import ArrowRight from './svg/arrow-right'
 import { Button } from './ui/button'
+import AppearOnScroll from './appear-on-scroll'
 
 export default function Path() {
   return (
-    <section className="container mx-auto mt-45 px-6">
+    <AppearOnScroll className="container mx-auto mt-45 px-6" amount={0.2}>
       <h2 className="text-primary text-3xl md:text-4xl tracking-[2%] font-semibold">
         Your Path to Better Meetings
       </h2>
@@ -45,6 +46,6 @@ export default function Path() {
           <ArrowRight className="lg:hidden" />
         </Button>
       </div>
-    </section>
+  </AppearOnScroll>
   )
 }

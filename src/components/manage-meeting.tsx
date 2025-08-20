@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import { Button } from './ui/button'
+import AppearOnScroll from './appear-on-scroll'
 
 export default function ManageMeeting() {
   return (
-    <section className="container mx-auto mt-32 flex flex-col md:flex-row justify-between px-6 md:px-10">
+    <AppearOnScroll className="container mx-auto mt-32 flex flex-col md:flex-row justify-between px-6 md:px-10" amount={0.2}>
       <div className="flex flex-col gap-28">
         <div className="text-white/90 tracking-[2%]">
           <p className="text-3xl md:text-2xl lg:text-4xl leading-[130%]">
@@ -28,6 +29,6 @@ export default function ManageMeeting() {
           height={380}
         />
       </div>
-    </section>
+  </AppearOnScroll>
   )
 }

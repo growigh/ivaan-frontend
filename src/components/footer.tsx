@@ -1,5 +1,6 @@
 import { BorderBeam } from './magicui/border-beam'
 import { Button } from './ui/button'
+import AppearOnScroll from './appear-on-scroll'
 
 export default function Footer() {
   return (
@@ -10,7 +11,7 @@ export default function Footer() {
           First 100 Users will get Lifetime 50% Off
         </p>
       </div>
-      <div className="flex sm:flex-row flex-col gap-4 mt-10 sm:mt-12 md:mt-14">
+      <AppearOnScroll className="flex sm:flex-row flex-col gap-4 mt-10 sm:mt-12 md:mt-14" amount={0.2}>
         <div className="relative rounded-xl border md:w-106">
           <input
             type="email"
@@ -25,10 +26,11 @@ export default function Footer() {
           />
         </div>
         <Button>Get Early Access</Button>
-      </div>
+      </AppearOnScroll>
       <div className="text-white/70 text-sm mt-20 sm:mt-24 md:mt-40 pb-10">
         &copy; {new Date().getFullYear()} Growigh
       </div>
     </footer>
   )
 }
+ 
