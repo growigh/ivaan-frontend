@@ -41,7 +41,7 @@ export default function Path() {
       </div>
 
       <div className="mt-6 md:mt-8 lg:mt-11 flex justify-end">
-        <Button className="w-full md:w-fit text-left max-md:rounded-full flex justify-between items-center bg-gradient-to-tr from-[#2D8CFF] to-[#1B5499]">
+        <Button className="w-full md:w-fit text-left max-md:rounded-full flex justify-between items-center max-lg:bg-gradient-to-tr from-[#2D8CFF] to-[#1B5499] lg:bg-primary">
           <p className="">Get Early Access</p>
           <ArrowRight className="lg:hidden" />
         </Button>

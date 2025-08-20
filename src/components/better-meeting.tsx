@@ -45,8 +45,20 @@ export default function BetterMeeting() {
         Features built for clarity, speed, and smarter outcomes.
       </p>
 
-      <div className="flex mt-26">
-        <div></div>
+      <div className="mt-26 flex justify-between flex-col md:flex-row gap-24 md:gap-[175px]">
+         <motion.div 
+          className='border rounded-3xl p-4 lg:p-6 max-w-xl flex gap-3 flex-col text-sm lg:text-base min-h-56'
+          layout
+          transition={{ 
+            duration: 0.6, 
+            ease: "easeInOut",
+            layout: { duration: 0.6, ease: "easeInOut" }
+          }}
+        >
+          <video width={600} height={500} autoPlay loop muted>
+            <source src={"/videos/todo.mov"} type="video/mp4" />
+          </video>
+        </motion.div>
 
         <div className="inline-block">
           <p className="text-[28px] md:text-[32px] text-white/60 tracking-[2%] leading-[130%] font-bold uppercase">
@@ -60,7 +72,7 @@ export default function BetterMeeting() {
         </div>
       </div>
 
-      <div className="mt-40 flex justify-between flex-col md:flex-row gap-24 md:gap-24">
+      <div className="mt-40 flex justify-between flex-col md:flex-row gap-24 md:gap-32">
         <div className="inline-block self-center">
           <p className="text-[28px] md:text-[32px] text-white/60 tracking-[2%] leading-[130%] font-bold uppercase">
             Accurate
@@ -73,7 +85,7 @@ export default function BetterMeeting() {
         </div>
 
         <motion.div 
-          className='border rounded-3xl p-4 lg:p-6 max-w-xl flex gap-3 flex-col text-sm lg:text-base min-h-56'
+          className='border rounded-3xl p-4 lg:p-6 max-w-[562px] flex gap-3 flex-col text-sm lg:text-base min-h-56'
           layout
           transition={{ 
             duration: 0.6, 
@@ -104,7 +116,7 @@ export default function BetterMeeting() {
               >
                 {shouldShowMessage ? (
                   <>
-                    <span className='text-muted'>{chat.time}</span>
+                    <span className='text-white/50'>{chat.time}</span>
                     <span className='mx-1 font-bold'>{chat.speaker}:</span>
                     <TypewriterText 
                       text={chat.message}
