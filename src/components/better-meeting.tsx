@@ -9,7 +9,7 @@ import AppearOnScroll from './appear-on-scroll'
 
 export default function BetterMeeting() {
   const [completedChats, setCompletedChats] = useState<number[]>([])
-  
+
   const handleChatComplete = useCallback((index: number) => {
     setCompletedChats(prev => {
       if (!prev.includes(index)) {
@@ -18,7 +18,7 @@ export default function BetterMeeting() {
       return prev
     })
   }, [])
-  
+
   const chatData = [
     {
       time: "[00:00]",
@@ -46,11 +46,11 @@ export default function BetterMeeting() {
       </p>
 
       <div className="mt-26 flex justify-between flex-col md:flex-row gap-24 md:gap-[175px]">
-         <motion.div 
+         <motion.div
           className='border rounded-3xl p-4 lg:p-6 max-w-xl flex gap-3 flex-col text-sm lg:text-base min-h-56'
           layout
-          transition={{ 
-            duration: 0.6, 
+          transition={{
+            duration: 0.6,
             ease: "easeInOut",
             layout: { duration: 0.6, ease: "easeInOut" }
           }}
@@ -84,11 +84,11 @@ export default function BetterMeeting() {
           <Button className='mt-8'>Get early Access</Button>
         </div>
 
-        <motion.div 
+        <motion.div
           className='border rounded-3xl p-4 lg:p-6 max-w-[562px] flex gap-3 flex-col text-sm lg:text-base min-h-56'
           layout
-          transition={{ 
-            duration: 0.6, 
+          transition={{
+            duration: 0.6,
             ease: "easeInOut",
             layout: { duration: 0.6, ease: "easeInOut" }
           }}
@@ -97,19 +97,19 @@ export default function BetterMeeting() {
             const shouldStart = index === 0 || completedChats.includes(index - 1)
             const isCurrentlyTyping = shouldStart && !completedChats.includes(index)
             const shouldShowMessage = completedChats.includes(index) || isCurrentlyTyping
-            
+
             return (
-              <motion.div 
-                className='' 
+              <motion.div
+                className=''
                 key={index}
                 layout
                 initial={{ opacity: 0, height: 0 }}
-                animate={{ 
+                animate={{
                   opacity: shouldShowMessage ? 1 : 0,
                   height: shouldShowMessage ? "auto" : 0
                 }}
-                transition={{ 
-                  duration: 0.4, 
+                transition={{
+                  duration: 0.4,
                   ease: "easeInOut",
                   layout: { duration: 0.4, ease: "easeInOut" }
                 }}
@@ -118,7 +118,7 @@ export default function BetterMeeting() {
                   <>
                     <span className='text-white/50'>{chat.time}</span>
                     <span className='mx-1 font-bold'>{chat.speaker}:</span>
-                    <TypewriterText 
+                    <TypewriterText
                       text={chat.message}
                       delay={index === 0 ? 500 : 200}
                       speed={20}
@@ -144,9 +144,9 @@ export default function BetterMeeting() {
         <div className="flex-[60%] lg:flex-2/3 flex items-center justify-center">
           <Image
             src="/images/points.webp"
-            width={560}
+            width={580}
             height={380}
-            className='md:w-[340px] lg:w-[560px]'
+            className='md:w-[340px] lg:w-[580px]'
             alt="Points"
           />
         </div>
