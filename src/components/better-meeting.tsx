@@ -61,7 +61,7 @@ export default function BetterMeeting() {
         </motion.div>
 
         <div className="inline-block">
-          <p className="text-[28px] md:text-[32px] text-white/60 tracking-[2%] leading-[130%] font-bold uppercase">
+          <p className="text-[28px] md:text-[42px] text-white/60 tracking-[2%] leading-[130%] font-bold uppercase">
             High Quality
             <span className="text-white/90 md:block"> Notes</span>
           </p>
@@ -73,8 +73,8 @@ export default function BetterMeeting() {
       </div>
 
       <div className="mt-40 flex justify-between flex-col md:flex-row gap-24 md:gap-32">
-        <div className="inline-block self-center">
-          <p className="text-[28px] md:text-[32px] text-white/60 tracking-[2%] leading-[130%] font-bold uppercase">
+        <div className="inline-block self-center lg:ml-14">
+          <p className="text-[28px] md:text-[42px] text-white/60 tracking-[2%] leading-[130%] font-bold uppercase">
             Accurate
             <span className="text-white/90 md:block"> Transcripts</span>
           </p>
@@ -140,7 +140,7 @@ export default function BetterMeeting() {
         </motion.div>
       </div>
 
-      <div className="flex flex-col md:flex-row mt-40 gap-16 md:gap-0 lg:gap-20">
+      <div className="flex flex-col md:flex-row mt-[179px] gap-16 md:gap-0 lg:gap-20">
         <div className="flex-[60%] lg:flex-2/3 flex items-center justify-center">
           <Image
             src="/images/points.webp"
@@ -152,7 +152,7 @@ export default function BetterMeeting() {
         </div>
 
         <div className="inline-block flex-[40%] lg:flex-1/3 self-center">
-          <p className="text-[28px] md:text-[32px] text-white/60 tracking-[2%] leading-[130%] font-bold uppercase">
+          <p className="text-[28px] md:text-[42px] text-white/60 tracking-[2%] leading-[130%] font-bold uppercase">
             Clarity That
             <span className="text-white/90 md:block"> Connects</span>
           </p>
