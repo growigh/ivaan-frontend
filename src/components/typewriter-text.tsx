@@ -12,10 +12,10 @@ interface TypewriterTextProps {
   shouldStart?: boolean
 }
 
-export default function TypewriterText({ 
-  text, 
-  delay = 0, 
-  speed = 30, 
+export default function TypewriterText({
+  text,
+  delay = 0,
+  speed = 30,
   onComplete,
   className = '',
   shouldStart = true
@@ -37,7 +37,7 @@ export default function TypewriterText({
       setDisplayedText('')
       return
     }
-    
+
     if (delay > 0) {
       const delayTimer = setTimeout(() => {
         setStarted(true)
@@ -65,17 +65,20 @@ export default function TypewriterText({
   }, [currentIndex, text, speed, started])
 
   return (
-    <motion.span 
+    <motion.span
       className={className}
       initial={{ opacity: 0 }}
       animate={{ opacity: started ? 1 : 0 }}
-      transition={{ duration: 0.2 }}
-    >
+      transition={{ duration: 0.2 }}>
       {displayedText}
       {currentIndex < text.length && started && (
         <motion.span
           animate={{ opacity: [1, 0] }}
-          transition={{ duration: 0.8, repeat: Infinity, repeatType: "reverse" }}
+          transition={{
+            duration: 0.8,
+            repeat: Infinity,
+            repeatType: 'reverse'
+          }}
           className="inline-block w-0.5 h-4 bg-current ml-0.5"
         />
       )}

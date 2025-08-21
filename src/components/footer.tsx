@@ -11,7 +11,9 @@ export default function Footer() {
           First 100 Users will get Lifetime 50% Off
         </p>
       </div>
-      <AppearOnScroll className="flex sm:flex-row flex-col gap-4 mt-10 sm:mt-12 md:mt-14" amount={0.2}>
+      <AppearOnScroll
+        className="flex sm:flex-row flex-col gap-4 mt-10 sm:mt-12 md:mt-14"
+        amount={0.2}>
         <div className="relative rounded-xl border md:w-106">
           <input
             type="email"
@@ -33,4 +35,3 @@ export default function Footer() {
     </footer>
   )
 }
- 

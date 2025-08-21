@@ -1,22 +1,22 @@
-'use client';
+'use client'
 
-import * as React from 'react';
+import * as React from 'react'
 import {
   AnimatePresence,
   motion,
   type HTMLMotionProps,
-  type Transition,
-} from 'motion/react';
+  type Transition
+} from 'motion/react'
 
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils'
 
 type RotatingTextProps = {
-  text: string | string[];
-  duration?: number;
-  transition?: Transition;
-  y?: number;
-  containerClassName?: string;
-} & HTMLMotionProps<'div'>;
+  text: string | string[]
+  duration?: number
+  transition?: Transition
+  y?: number
+  containerClassName?: string
+} & HTMLMotionProps<'div'>
 
 function RotatingText({
   text,
@@ -26,17 +26,17 @@ function RotatingText({
   containerClassName,
   ...props
 }: RotatingTextProps) {
-  const [index, setIndex] = React.useState(0);
+  const [index, setIndex] = React.useState(0)
 
   React.useEffect(() => {
-    if (!Array.isArray(text)) return;
+    if (!Array.isArray(text)) return
     const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % text.length);
-    }, duration);
-    return () => clearInterval(interval);
-  }, [text, duration]);
+      setIndex(prevIndex => (prevIndex + 1) % text.length)
+    }, duration)
+    return () => clearInterval(interval)
+  }, [text, duration])
 
-  const currentText = Array.isArray(text) ? text[index] : text;
+  const currentText = Array.isArray(text) ? text[index] : text
 
   return (
     <div className={cn('overflow-hidden py-1', containerClassName)}>
@@ -47,13 +47,12 @@ function RotatingText({
           initial={{ opacity: 0, y: -y }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y }}
-          {...props}
-        >
+          {...props}>
           {currentText}
         </motion.div>
       </AnimatePresence>
     </div>
-  );
+  )
 }
 
-export { RotatingText, type RotatingTextProps };
+export { RotatingText, type RotatingTextProps }

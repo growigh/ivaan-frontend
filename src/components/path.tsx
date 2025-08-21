@@ -46,6 +46,6 @@ export default function Path() {
           <ArrowRight className="lg:hidden" />
         </Button>
       </div>
-  </AppearOnScroll>
+    </AppearOnScroll>
   )
 }

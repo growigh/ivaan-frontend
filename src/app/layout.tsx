@@ -7,7 +7,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className='dark'>
+    <html lang="en" className="dark">
       <head>
         <title>{CONST.SITE_NAME}</title>
         <meta charSet="UTF-8" />

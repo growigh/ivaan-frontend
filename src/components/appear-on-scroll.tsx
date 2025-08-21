@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { PropsWithChildren, useRef } from 'react'
 import { motion, useInView } from 'motion/react'
@@ -24,7 +24,7 @@ export default function AppearOnScroll({
   offsetY = 24,
   duration = 0.5,
   once = true,
-  amount = 0.2,
+  amount = 0.2
 }: Props) {
   const ref = useRef<HTMLElement | null>(null)
   const isInView = useInView(ref, { once, amount })
@@ -35,8 +35,7 @@ export default function AppearOnScroll({
       className={className}
       initial={{ opacity: 0, y: offsetY }}
       animate={isInView ? { opacity: 1, y: 0 } : undefined}
-      transition={{ duration, delay, ease: 'easeOut' }}
-    >
+      transition={{ duration, delay, ease: 'easeOut' }}>
       {children}
     </motion.section>
   )
