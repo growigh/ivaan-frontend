@@ -2,13 +2,57 @@
 
 import { motion } from 'motion/react'
 import Image from 'next/image'
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import AppearOnScroll from './appear-on-scroll'
 import TypewriterText from './typewriter-text'
 import { Button } from './ui/button'
-import AppearOnScroll from './appear-on-scroll'
 
 export default function BetterMeeting() {
   const [completedChats, setCompletedChats] = useState<number[]>([])
+  const [isInView, setIsInView] = useState(false)
+  const [isVideoInView, setIsVideoInView] = useState(false)
+  const chatContainerRef = useRef<HTMLDivElement>(null)
+  const videoContainerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const chatObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true)
+        }
+      },
+      { threshold: 0.5 } // Trigger when 50% of the element is visible
+    )
+
+    const videoObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVideoInView(true)
+        }
+      },
+      { threshold: 0.5 } // Trigger when 50% of the element is visible
+    )
+
+    const currentChatRef = chatContainerRef.current
+    const currentVideoRef = videoContainerRef.current
+    
+    if (currentChatRef) {
+      chatObserver.observe(currentChatRef)
+    }
+    
+    if (currentVideoRef) {
+      videoObserver.observe(currentVideoRef)
+    }
+
+    return () => {
+      if (currentChatRef) {
+        chatObserver.unobserve(currentChatRef)
+      }
+      if (currentVideoRef) {
+        videoObserver.unobserve(currentVideoRef)
+      }
+    }
+  }, [])
 
   const handleChatComplete = useCallback((index: number) => {
     setCompletedChats(prev => {
@@ -52,16 +96,19 @@ export default function BetterMeeting() {
 
       <div className="mt-26 flex flex-col md:flex-row gap-9 sm:gap-16 md:gap-15 lg:gap-43">
         <motion.div
-          className="border-2 rounded-3xl p-4 lg:p-6 max-w-xl flex gap-3 flex-col text-sm lg:text-base min-h-56"
+          ref={videoContainerRef}
+          className="border-2 rounded-3xl p-4 lg:p-6 max-w-xl flex gap-3 flex-col text-sm lg:text-base min-h-56 lg:min-w-[576px]"
           layout
           transition={{
             duration: 0.6,
             ease: 'easeInOut',
             layout: { duration: 0.6, ease: 'easeInOut' }
           }}>
-          <video width={600} height={500} autoPlay loop muted>
-            <source src={'/videos/todo.mov'} type="video/mp4" />
-          </video>
+          {isVideoInView && (
+            <video width={600} height={500} autoPlay loop muted>
+              <source src={'/videos/todo.mov'} type="video/mp4" />
+            </video>
+          )}
         </motion.div>
 
         <div className="inline-block">
@@ -89,7 +136,8 @@ export default function BetterMeeting() {
         </div>
 
         <motion.div
-          className="border-2 rounded-3xl p-4 lg:p-6 max-w-[562px] flex gap-3 flex-col text-sm lg:text-base min-h-56 order-1 md:order-2"
+          ref={chatContainerRef}
+          className="border-2 rounded-3xl p-4 lg:p-6 max-w-[562px] flex gap-3 flex-col text-sm lg:text-base order-1 md:order-2"
           layout
           transition={{
             duration: 0.6,
@@ -98,7 +146,7 @@ export default function BetterMeeting() {
           }}>
           {chatData.map((chat, index) => {
             const shouldStart =
-              index === 0 || completedChats.includes(index - 1)
+              isInView && (index === 0 || completedChats.includes(index - 1))
             const isCurrentlyTyping =
               shouldStart && !completedChats.includes(index)
             const shouldShowMessage =
