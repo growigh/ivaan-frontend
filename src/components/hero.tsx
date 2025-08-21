@@ -5,7 +5,7 @@ import AppearOnScroll from './appear-on-scroll'
 
 export default function Hero() {
   return (
-    <AppearOnScroll className="text-center mt-12 sm:mt-24 px-6" amount={0.15}>
+    <AppearOnScroll className="text-center mt-16 sm:mt-24 px-6" amount={0.15}>
       <h1 className="text-5xl md:text-6xl font-heading !leading-[120%] sm:!leading-[140%] font-semibold tracking-[2%]">
         Edith, Your Personal AI
         <span className="sm:block"> Meeting Assistant</span>
@@ -46,6 +46,6 @@ export default function Hero() {
         First 100 Users will get{' '}
         <span className="text-white">Lifetime 50% Off</span>
       </div>
-  </AppearOnScroll>
+    </AppearOnScroll>
   )
 }

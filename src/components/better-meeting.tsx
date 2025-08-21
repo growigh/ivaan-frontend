@@ -21,23 +21,28 @@ export default function BetterMeeting() {
 
   const chatData = [
     {
-      time: "[00:00]",
-      speaker: "Alex",
-      message: "Thanks for joining. Alright, let’s get started. Goal today is to lock MVP scope and timeline."
+      time: '[00:00]',
+      speaker: 'Alex',
+      message:
+        'Thanks for joining. Alright, let’s get started. Goal today is to lock MVP scope and timeline.'
     },
     {
-      time: "[00:12]",
-      speaker: "Mia",
-      message: "Cool. I’ve got the latest note-taking flow and the context panel mock."
+      time: '[00:12]',
+      speaker: 'Mia',
+      message:
+        'Cool. I’ve got the latest note-taking flow and the context panel mock.'
     },
     {
-      time: "[00:20]",
-      speaker: "Marco",
-      message: "Quick tech update before that before that transcription latency's around two-is seconds per utterance on our current setup."
-    },
+      time: '[00:20]',
+      speaker: 'Marco',
+      message:
+        "Quick tech update before that before that transcription latency's around two-is seconds per utterance on our current setup."
+    }
   ]
   return (
-    <AppearOnScroll className="container mx-auto mt-30 md:mt-40 px-6 lg:px-20" amount={0.2}>
+    <AppearOnScroll
+      className="container mx-auto mt-30 md:mt-40 px-6 lg:px-20"
+      amount={0.2}>
       <h2 className="text-primary text-4xl md:text-[40px] md:tracking-[2%] font-semibold text-center md:text-left">
         Everything You Need for Better Meetings
       </h2>
@@ -45,18 +50,17 @@ export default function BetterMeeting() {
         Features built for clarity, speed, and smarter outcomes.
       </p>
 
-      <div className="mt-26 flex justify-between flex-col md:flex-row gap-24 md:gap-[175px]">
-         <motion.div
-          className='border rounded-3xl p-4 lg:p-6 max-w-xl flex gap-3 flex-col text-sm lg:text-base min-h-56'
+      <div className="mt-26 flex justify-between flex-col md:flex-row gap-9 sm:gap-16 md:gap-15 lg:gap-[175px]">
+        <motion.div
+          className="border rounded-3xl p-4 lg:p-6 max-w-xl flex gap-3 flex-col text-sm lg:text-base min-h-56"
           layout
           transition={{
             duration: 0.6,
-            ease: "easeInOut",
-            layout: { duration: 0.6, ease: "easeInOut" }
-          }}
-        >
+            ease: 'easeInOut',
+            layout: { duration: 0.6, ease: 'easeInOut' }
+          }}>
           <video width={600} height={500} autoPlay loop muted>
-            <source src={"/videos/todo.mov"} type="video/mp4" />
+            <source src={'/videos/todo.mov'} type="video/mp4" />
           </video>
         </motion.div>
 
@@ -68,12 +72,12 @@ export default function BetterMeeting() {
           <p className="text-base mt-2 md:mt-6 md:text-xl text-white/75 pr-4">
             Only the details that matter, perfectly captured.
           </p>
-          <Button className='mt-8'>Join the Waitlist</Button>
+          <Button className="mt-8">Join the Waitlist</Button>
         </div>
       </div>
 
-      <div className="mt-40 flex justify-between flex-col md:flex-row gap-24 md:gap-32">
-        <div className="inline-block self-center lg:ml-14">
+      <div className="mt-28 md:mt-35 lg:mt-40 flex justify-between flex-col md:flex-row  gap-9 sm:gap-16 md:gap-18 lg:gap-40">
+        <div className="inline-block lg:ml-14 order-2 md:order-1">
           <p className="text-[28px] md:text-[42px] text-white/60 tracking-[2%] leading-[130%] font-bold uppercase">
             Accurate
             <span className="text-white/90 md:block"> Transcripts</span>
@@ -81,43 +85,44 @@ export default function BetterMeeting() {
           <p className="text-base mt-2 md:mt-6 md:text-xl text-white/75">
             Every word, captured and crystal clear.
           </p>
-          <Button className='mt-8'>Get early Access</Button>
+          <Button className="mt-8">Get early Access</Button>
         </div>
 
         <motion.div
-          className='border rounded-3xl p-4 lg:p-6 max-w-[562px] flex gap-3 flex-col text-sm lg:text-base min-h-56'
+          className="border rounded-3xl p-4 lg:p-6 max-w-[562px] flex gap-3 flex-col text-sm lg:text-base min-h-56 order-1 md:order-2"
           layout
           transition={{
             duration: 0.6,
-            ease: "easeInOut",
-            layout: { duration: 0.6, ease: "easeInOut" }
-          }}
-        >
+            ease: 'easeInOut',
+            layout: { duration: 0.6, ease: 'easeInOut' }
+          }}>
           {chatData.map((chat, index) => {
-            const shouldStart = index === 0 || completedChats.includes(index - 1)
-            const isCurrentlyTyping = shouldStart && !completedChats.includes(index)
-            const shouldShowMessage = completedChats.includes(index) || isCurrentlyTyping
+            const shouldStart =
+              index === 0 || completedChats.includes(index - 1)
+            const isCurrentlyTyping =
+              shouldStart && !completedChats.includes(index)
+            const shouldShowMessage =
+              completedChats.includes(index) || isCurrentlyTyping
 
             return (
               <motion.div
-                className=''
+                className=""
                 key={index}
                 layout
                 initial={{ opacity: 0, height: 0 }}
                 animate={{
                   opacity: shouldShowMessage ? 1 : 0,
-                  height: shouldShowMessage ? "auto" : 0
+                  height: shouldShowMessage ? 'auto' : 0
                 }}
                 transition={{
                   duration: 0.4,
-                  ease: "easeInOut",
-                  layout: { duration: 0.4, ease: "easeInOut" }
-                }}
-              >
+                  ease: 'easeInOut',
+                  layout: { duration: 0.4, ease: 'easeInOut' }
+                }}>
                 {shouldShowMessage ? (
                   <>
-                    <span className='text-white/50'>{chat.time}</span>
-                    <span className='mx-1 font-bold'>{chat.speaker}:</span>
+                    <span className="text-white/50">{chat.time}</span>
+                    <span className="mx-1 font-bold">{chat.speaker}:</span>
                     <TypewriterText
                       text={chat.message}
                       delay={index === 0 ? 500 : 200}
@@ -129,8 +134,8 @@ export default function BetterMeeting() {
                   </>
                 ) : (
                   <div className="invisible">
-                    <span className='text-muted'>{chat.time}</span>
-                    <span className='mx-1 font-bold'>{chat.speaker}:</span>
+                    <span className="text-muted">{chat.time}</span>
+                    <span className="mx-1 font-bold">{chat.speaker}:</span>
                     <span>{chat.message}</span>
                   </div>
                 )}
@@ -140,18 +145,18 @@ export default function BetterMeeting() {
         </motion.div>
       </div>
 
-      <div className="flex flex-col md:flex-row mt-[179px] gap-16 md:gap-0 lg:gap-20">
-        <div className="flex-[60%] lg:flex-2/3 flex items-center justify-center">
+      <div className="flex flex-col md:flex-row mt-28 md:mt-35 lg:mt-45 gap-17 md:gap-20 lg:gap-41">
+        <div className="flex items-center justify-center">
           <Image
             src="/images/points.webp"
             width={580}
             height={380}
-            className='md:w-[340px] lg:w-[580px]'
+            className="md:w-[340px] lg:w-[580px]"
             alt="Points"
           />
         </div>
 
-        <div className="inline-block flex-[40%] lg:flex-1/3 self-center">
+        <div className="inline-block">
           <p className="text-[28px] md:text-[42px] text-white/60 tracking-[2%] leading-[130%] font-bold uppercase">
             Clarity That
             <span className="text-white/90 md:block"> Connects</span>
@@ -159,9 +164,9 @@ export default function BetterMeeting() {
           <p className="text-base mt-2 md:mt-6 md:text-xl text-white/75 pr-4">
             Where intelligent insights meet effortless meeting management.
           </p>
-          <Button className='mt-8'>Join the Waitlist</Button>
+          <Button className="mt-8">Join the Waitlist</Button>
         </div>
       </div>
-  </AppearOnScroll>
+    </AppearOnScroll>
   )
 }
