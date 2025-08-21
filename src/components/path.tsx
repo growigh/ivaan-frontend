@@ -4,7 +4,7 @@ import AppearOnScroll from './appear-on-scroll'
 
 export default function Path() {
   return (
-    <AppearOnScroll className="container mx-auto mt-45 px-6" amount={0.2}>
+    <AppearOnScroll className="container mx-auto mt-45 px-6 lg:px-10" amount={0.2}>
       <h2 className="text-primary text-3xl md:text-4xl tracking-[2%] font-semibold">
         Your Path to Better Meetings
       </h2>

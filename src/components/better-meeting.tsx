@@ -41,7 +41,7 @@ export default function BetterMeeting() {
   ]
   return (
     <AppearOnScroll
-      className="container mx-auto mt-30 md:mt-40 px-6 lg:px-20"
+      className="container mx-auto mt-30 md:mt-40 px-6 lg:px-10"
       amount={0.2}>
       <h2 className="text-primary text-4xl md:text-[40px] md:tracking-[2%] font-semibold text-center md:text-left">
         Everything You Need for Better Meetings
@@ -50,9 +50,9 @@ export default function BetterMeeting() {
         Features built for clarity, speed, and smarter outcomes.
       </p>
 
-      <div className="mt-26 flex justify-between flex-col md:flex-row gap-9 sm:gap-16 md:gap-15 lg:gap-[175px]">
+      <div className="mt-26 flex flex-col md:flex-row gap-9 sm:gap-16 md:gap-15 lg:gap-43">
         <motion.div
-          className="border rounded-3xl p-4 lg:p-6 max-w-xl flex gap-3 flex-col text-sm lg:text-base min-h-56"
+          className="border-2 rounded-3xl p-4 lg:p-6 max-w-xl flex gap-3 flex-col text-sm lg:text-base min-h-56"
           layout
           transition={{
             duration: 0.6,
@@ -89,7 +89,7 @@ export default function BetterMeeting() {
         </div>
 
         <motion.div
-          className="border rounded-3xl p-4 lg:p-6 max-w-[562px] flex gap-3 flex-col text-sm lg:text-base min-h-56 order-1 md:order-2"
+          className="border-2 rounded-3xl p-4 lg:p-6 max-w-[562px] flex gap-3 flex-col text-sm lg:text-base min-h-56 order-1 md:order-2"
           layout
           transition={{
             duration: 0.6,
