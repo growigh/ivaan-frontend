@@ -13,6 +13,7 @@ export default function BetterMeeting() {
   const [isVideoInView, setIsVideoInView] = useState(false)
   const chatContainerRef = useRef<HTMLDivElement>(null)
   const videoContainerRef = useRef<HTMLDivElement>(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
     const chatObserver = new IntersectionObserver(
@@ -53,6 +54,17 @@ export default function BetterMeeting() {
       }
     }
   }, [])
+
+  // Handle video playback based on isVideoInView
+  useEffect(() => {
+    if (videoRef.current) {
+      if (isVideoInView) {
+        videoRef.current.play().catch(console.error)
+      } else {
+        videoRef.current.pause()
+      }
+    }
+  }, [isVideoInView])
 
   const handleChatComplete = useCallback((index: number) => {
     setCompletedChats(prev => {
@@ -104,9 +116,15 @@ export default function BetterMeeting() {
             ease: 'easeInOut',
             layout: { duration: 0.6, ease: 'easeInOut' }
           }}>
-          <video width={600} height={500} autoPlay={isVideoInView} loop muted>
-            <source src={'/videos/todo.mov'} type="video/mp4" />
-          </video>
+            <video 
+              ref={videoRef}
+              width={600} 
+              height={500} 
+              loop 
+              muted
+            >
+              <source src={'/videos/todo.mov'} type="video/mp4" />
+            </video>
         </motion.div>
 
         <div className="inline-block">
