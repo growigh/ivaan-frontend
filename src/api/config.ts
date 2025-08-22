@@ -1,11 +1,13 @@
+'use server'
 import axios from 'axios'
+
+
 
 // Retool API configuration
 export const retoolApi = axios.create({
   baseURL: 'https://api.retool.com/v1',
   headers: {
     'Content-Type': 'application/json',
-    'Authorization': `Bearer ${process.env.RETOOL_API_KEY}`
   },
   timeout: 10000 // 10 seconds timeout
 })

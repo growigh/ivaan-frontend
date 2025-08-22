@@ -1,3 +1,5 @@
+'use server'
+
 import { UTMParams } from '../utils/utm'
 import { retoolApi } from './config'
 
@@ -31,17 +33,26 @@ export const submitEarlyAccess = async (data: EarlyAccessData): Promise<EarlyAcc
       utm_content: data.utm?.utm_content,
     }
 
+    // Get the API key from environment variable
+    const apiKey = process.env.RETOOL_API_KEY
+    const workflowId = process.env.RETOOL_WORKFLOW_ID
+    
+    if (!apiKey) {
+      throw new Error('Retool API key not configured')
+    }
+
+    // Use query parameter for API key instead of Authorization header
     await retoolApi.post(
-      `/workflows/${process.env.RETOOL_WORKFLOW_ID}/startTrigger`,
+      `/workflows/${workflowId}/startTrigger?workflowApiKey=${apiKey}`,
       payload
     )
-
 
     return {
       success: true,
       message: 'Successfully submitted for early access'
     }
   } catch (error) {
+    // Ayush tu kuch bola toh marunga server side hai ye
     console.error('Early access submission failed:', error)
     
     // Handle different error types
