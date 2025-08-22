@@ -13,7 +13,7 @@ export default function ManageMeeting() {
             Manage Hundreds of
             <span className="block sm:inline md:block"> meetings with</span>
           </p>
-          <p className="font-bold text-5xl lg:text-6xl mt-4">Edith</p>
+          <p className="font-bold text-5xl lg:text-6xl mt-4">IVAAN</p>
         </div>
         <div className="hidden md:block">
           <Button>Get early Access</Button>
@@ -25,7 +25,7 @@ export default function ManageMeeting() {
       <div className="flex flex-col justify-center mt-20 md:mt-0">
         <Image
           src="/images/network.webp"
-          alt="Edith managing meetings"
+          alt="IVAAN managing meetings"
           className="md:w-[335px] lg:w-[600px]"
           width={600}
           height={380}

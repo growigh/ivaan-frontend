@@ -1,11 +1,11 @@
 const CONST = {
-  GA_ID: 'G-T8VDM4N602',
-  SITE_NAME: 'Edith',
+  GA_ID: 'G-YPNRML59Z6',
+  SITE_NAME: 'IVAAN',
   DESCRIPTION:
-    'Edith, your personal AI meeting assistant that remembers, connects and talks about all your meetings.',
-  TITLE: 'Edith',
-  SITE_URL: 'https://heyedith.in',
-  CANONICAL_URL: 'https://heyedith.in'
+    'IVAAN, your personal AI meeting assistant that remembers, connects and talks about all your meetings.',
+  TITLE: 'IVAAN',
+  SITE_URL: 'https://heyivaan.in',
+  CANONICAL_URL: 'https://heyivaan.in'
 }
 
 export default CONST

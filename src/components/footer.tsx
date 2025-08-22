@@ -1,6 +1,6 @@
-import { BorderBeam } from './magicui/border-beam'
-import { Button } from './ui/button'
 import AppearOnScroll from './appear-on-scroll'
+import { CTAField } from './cta-field'
+import { Button } from './ui/button'
 
 export default function Footer() {
   return (
@@ -14,20 +14,7 @@ export default function Footer() {
       <AppearOnScroll
         className="flex sm:flex-row flex-col gap-4 mt-10 sm:mt-12 md:mt-14"
         amount={0.2}>
-        <div className="relative rounded-xl border md:w-106">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="px-4 py-2 rounded-xl w-full focus:outline-none"
-          />
-          <BorderBeam
-            duration={8}
-            size={100}
-            borderWidth={2}
-            className="from-[#B9D9FF] via-[#63A9FE] to-[#003575]"
-          />
-        </div>
-        <Button>Get Early Access</Button>
+        <CTAField />
       </AppearOnScroll>
       <div className="text-white/70 text-sm mt-20 sm:mt-24 md:mt-40 pb-10">
         &copy; {new Date().getFullYear()} Growigh

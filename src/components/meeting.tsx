@@ -10,7 +10,7 @@ export default function Meeting() {
       <div className="flex flex-col text-center md:text-left gap">
         <div>
           <h2 className="text-3xl sm:text-2xl-4xl lg:text-5xl font-semibold leading-[110%]">
-            Edith Connect All Your
+            Ivaan Connect All Your
             <span className="block sm:inline md:block lg:inline xl:block">
               {' '}
               Meeting Contexts

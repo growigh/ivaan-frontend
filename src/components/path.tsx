@@ -9,7 +9,7 @@ export default function Path() {
         Your Path to Better Meetings
       </h2>
       <p className="text-base md:text-xl text-white/75 mt-2 md:mt-4">
-        From start to finish, Edith has you covered.
+        From start to finish, Ivaan has you covered.
       </p>
 
       <div className="flex flex-col lg:flex-row mt-13 sm:mt-16 lg:mt-26 gap-6 md:gap-5 lg:gap-12">
@@ -24,15 +24,15 @@ export default function Path() {
         </div>
 
         <div className="p-10 lg:p-12 border-2 border-white/15 rounded-3xl">
-          <p className="text-xl lg:text-2xl text-white/90">Talk to Edith</p>
+          <p className="text-xl lg:text-2xl text-white/90">Talk to Ivaan</p>
           <p className="font-light text-sm lg:text-base text-white/75 pt-5">
-            Link your Google, Outlook, or other calendar so Edith knows your
+            Link your Google, Outlook, or other calendar so Ivaan knows your
             schedule.
           </p>
         </div>
 
         <div className="p-10 lg:p-12 border-2 border-white/15 rounded-3xl">
-          <p className="text-xl lg:text-2xl text-white/90">Let Edith Deliver</p>
+          <p className="text-xl lg:text-2xl text-white/90">Let Ivaan Deliver</p>
           <p className="font-light text-sm lg:text-base text-white/75 pt-5">
             Get high quality notes, action items, and transcripts instantly
             after every meeting.

@@ -1,5 +1,6 @@
 import CONST from '@/utils/constant'
 import './globals.css'
+import { Toaster } from 'sonner'
 
 export default function RootLayout({
   children
@@ -82,7 +83,10 @@ export default function RootLayout({
           </>
         )}
       </head>
-      <body className="font-body antialiased">{children}</body>
+      <body className="font-body antialiased">
+        {children}
+        <Toaster />
+      </body>
     </html>
   )
 }
