@@ -1,11 +1,11 @@
 "use client"
 import { useEffect, useState } from "react"
+import { toast } from "sonner"
 import { z } from "zod"
 import { submitEarlyAccess } from "../api"
 import { getCurrentUTMParams, storeUTMParams, UTMParams } from "../utils/utm"
 import { BorderBeam } from "./magicui/border-beam"
 import { Button } from "./ui/button"
-import { toast } from "sonner"
 
 // Zod schema for email validation
 const emailSchema = z.object({
@@ -37,7 +37,7 @@ export const CTAField = () => {
       emailSchema.parse({ email })
     } catch (error) {
       if (error instanceof z.ZodError) {
-        toast(error.issues[0].message)
+        toast.error(error.issues[0].message)
         return
       }
     }
@@ -52,11 +52,11 @@ export const CTAField = () => {
         utm: utmParams
       })
       
-      toast("Thank you! We'll be in touch soon.")
+      toast.success("Thank you! We'll be in touch soon.")
       setEmail("")
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
-      console.error("Failed to submit email:", error)
-      toast("Something went wrong. Please try again.")
+      toast.error("Something went wrong. Please try again.")
     } finally {
       setIsSubmitting(false)
     }
