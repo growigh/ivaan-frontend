@@ -4,8 +4,8 @@ import { motion } from 'motion/react'
 import Image from 'next/image'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import AppearOnScroll from './appear-on-scroll'
-import TypewriterText from './typewriter-text'
 import Cta from './cta'
+import TypewriterText from './typewriter-text'
 
 export default function BetterMeeting() {
   const [completedChats, setCompletedChats] = useState<number[]>([])
@@ -56,13 +56,23 @@ export default function BetterMeeting() {
   }, [])
 
   // Handle video playback based on isVideoInView
+  // 3) Playback effect (make sure muted/inline are set **before** play())
   useEffect(() => {
-    if (videoRef.current) {
-      if (isVideoInView) {
-        videoRef.current.play().catch(console.error)
-      } else {
-        videoRef.current.pause()
-      }
+    const v = videoRef.current
+    if (!v) return
+
+    // Ensure Safari sees these flags on the element before play()
+    v.muted = true
+    v.playsInline = true
+
+    if (isVideoInView) {
+      // Some Safari builds need a load() kick before play()
+      if (v.readyState < 2) v.load()
+      v.play().catch(() => {
+        // If Safari still refuses, nothing breaks; user can tap to play.
+      })
+    } else {
+      v.pause()
     }
   }, [isVideoInView])
 
@@ -116,15 +126,19 @@ export default function BetterMeeting() {
             ease: 'easeInOut',
             layout: { duration: 0.6, ease: 'easeInOut' }
           }}>
-            <video 
-              ref={videoRef}
-              width={600} 
-              height={500} 
-              loop 
-              muted
-            >
-              <source src={'/videos/todo.mov'} type="video/mp4" />
-            </video>
+          <video
+            ref={videoRef}
+            width={600}
+            height={500}
+            loop
+            muted
+            playsInline
+            autoPlay
+            preload="metadata"     
+            className="rounded-xl"
+          >
+            <source src="/videos/todo.mp4" type="video/mp4" />
+          </video>
         </motion.div>
 
         <div className="inline-block">
