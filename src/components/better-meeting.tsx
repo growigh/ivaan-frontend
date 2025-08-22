@@ -104,11 +104,15 @@ export default function BetterMeeting() {
             ease: 'easeInOut',
             layout: { duration: 0.6, ease: 'easeInOut' }
           }}>
-          {isVideoInView && (
-            <video width={600} height={500} autoPlay loop muted>
+            <video 
+              width={600} 
+              height={500} 
+              autoPlay={isVideoInView}
+              loop 
+              muted
+            >
               <source src={'/videos/todo.mov'} type="video/mp4" />
             </video>
-          )}
         </motion.div>
 
         <div className="inline-block">
