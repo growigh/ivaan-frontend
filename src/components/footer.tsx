@@ -1,10 +1,9 @@
 import AppearOnScroll from './appear-on-scroll'
-import { CTAField } from './cta-field'
-import { Button } from './ui/button'
+import { CTAField } from './cta-form'
 
 export default function Footer() {
   return (
-    <footer className="container mx-auto mt-60 px-6 md:px-10">
+    <footer className="container mx-auto mt-60 px-6 md:px-10" id="footer">
       <div className="flex flex-col gap-4">
         <p className="text-4xl font-bold">Join the Waitlist</p>
         <p className="text-white/75">

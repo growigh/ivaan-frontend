@@ -1,10 +1,12 @@
 import ArrowRight from './svg/arrow-right'
-import { Button } from './ui/button'
 import AppearOnScroll from './appear-on-scroll'
+import Cta from './cta'
 
 export default function Path() {
   return (
-    <AppearOnScroll className="container mx-auto mt-45 px-6 lg:px-10" amount={0.2}>
+    <AppearOnScroll
+      className="container mx-auto mt-45 px-6 lg:px-10"
+      amount={0.2}>
       <h2 className="text-primary text-3xl md:text-4xl tracking-[2%] font-semibold">
         Your Path to Better Meetings
       </h2>
@@ -41,10 +43,12 @@ export default function Path() {
       </div>
 
       <div className="mt-6 md:mt-8 lg:mt-11 flex justify-end">
-        <Button className="w-full md:w-fit text-left max-md:rounded-full flex justify-between items-center max-lg:bg-gradient-to-tr from-[#2D8CFF] to-[#1B5499] lg:bg-primary">
+        <Cta
+          to="#footer"
+          className="w-full lg:w-fit text-left rounded-full lg:rounded-xl flex justify-between items-center max-lg:bg-gradient-to-tr from-[#2D8CFF] to-[#1B5499] lg:bg-primary">
           <p className="">Get Early Access</p>
           <ArrowRight className="lg:hidden" />
-        </Button>
+        </Cta>
       </div>
     </AppearOnScroll>
   )

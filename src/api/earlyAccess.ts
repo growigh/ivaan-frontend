@@ -20,7 +20,9 @@ export interface EarlyAccessResponse {
  * @param data - Early access subscription data
  * @returns Promise with response data
  */
-export const submitEarlyAccess = async (data: EarlyAccessData): Promise<EarlyAccessResponse> => {
+export const submitEarlyAccess = async (
+  data: EarlyAccessData
+): Promise<EarlyAccessResponse> => {
   try {
     const payload = {
       email: data.email,
@@ -30,13 +32,13 @@ export const submitEarlyAccess = async (data: EarlyAccessData): Promise<EarlyAcc
       utm_medium: data.utm?.utm_medium,
       utm_campaign: data.utm?.utm_campaign,
       utm_term: data.utm?.utm_term,
-      utm_content: data.utm?.utm_content,
+      utm_content: data.utm?.utm_content
     }
 
     // Get the API key from environment variable
     const apiKey = process.env.RETOOL_API_KEY
     const workflowId = process.env.RETOOL_WORKFLOW_ID
-    
+
     if (!apiKey) {
       throw new Error('Retool API key not configured')
     }
@@ -54,12 +56,12 @@ export const submitEarlyAccess = async (data: EarlyAccessData): Promise<EarlyAcc
   } catch (error) {
     // Ayush tu kuch bola toh marunga server side hai ye
     console.error('Early access submission failed:', error)
-    
+
     // Handle different error types
     if (error instanceof Error) {
       throw new Error(`Failed to submit early access: ${error.message}`)
     }
-    
+
     throw new Error('Failed to submit early access: Unknown error')
   }
 }

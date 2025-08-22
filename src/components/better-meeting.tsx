@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import AppearOnScroll from './appear-on-scroll'
 import TypewriterText from './typewriter-text'
-import { Button } from './ui/button'
+import Cta from './cta'
 
 export default function BetterMeeting() {
   const [completedChats, setCompletedChats] = useState<number[]>([])
@@ -35,11 +35,11 @@ export default function BetterMeeting() {
 
     const currentChatRef = chatContainerRef.current
     const currentVideoRef = videoContainerRef.current
-    
+
     if (currentChatRef) {
       chatObserver.observe(currentChatRef)
     }
-    
+
     if (currentVideoRef) {
       videoObserver.observe(currentVideoRef)
     }
@@ -104,15 +104,9 @@ export default function BetterMeeting() {
             ease: 'easeInOut',
             layout: { duration: 0.6, ease: 'easeInOut' }
           }}>
-            <video 
-              width={600} 
-              height={500} 
-              autoPlay={isVideoInView}
-              loop 
-              muted
-            >
-              <source src={'/videos/todo.mov'} type="video/mp4" />
-            </video>
+          <video width={600} height={500} autoPlay={isVideoInView} loop muted>
+            <source src={'/videos/todo.mov'} type="video/mp4" />
+          </video>
         </motion.div>
 
         <div className="inline-block">
@@ -123,7 +117,9 @@ export default function BetterMeeting() {
           <p className="text-base mt-2 md:mt-6 md:text-xl text-white/75 pr-4">
             Only the details that matter, perfectly captured.
           </p>
-          <Button className="mt-8">Join the Waitlist</Button>
+          <Cta to="#hero" className="mt-8">
+            Join the Waitlist
+          </Cta>
         </div>
       </div>
 
@@ -136,7 +132,9 @@ export default function BetterMeeting() {
           <p className="text-base mt-2 md:mt-6 md:text-xl text-white/75">
             Every word, captured and crystal clear.
           </p>
-          <Button className="mt-8">Get early Access</Button>
+          <Cta to="#hero" className="mt-8">
+            Get early Access
+          </Cta>
         </div>
 
         <motion.div
@@ -216,7 +214,9 @@ export default function BetterMeeting() {
           <p className="text-base mt-2 md:mt-6 md:text-xl text-white/75 pr-4">
             Where intelligent insights meet effortless meeting management.
           </p>
-          <Button className="mt-8">Join the Waitlist</Button>
+          <Cta to="#hero" className="mt-8">
+            Join the Waitlist
+          </Cta>
         </div>
       </div>
     </AppearOnScroll>

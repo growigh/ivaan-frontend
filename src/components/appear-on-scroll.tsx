@@ -4,6 +4,7 @@ import { PropsWithChildren, useRef } from 'react'
 import { motion, useInView } from 'motion/react'
 
 type Props = PropsWithChildren<{
+  id?: string
   className?: string
   // Delay for the animation (seconds)
   delay?: number
@@ -18,6 +19,7 @@ type Props = PropsWithChildren<{
 }>
 
 export default function AppearOnScroll({
+  id,
   children,
   className,
   delay = 0,
@@ -31,6 +33,7 @@ export default function AppearOnScroll({
 
   return (
     <motion.section
+      id={id}
       ref={ref}
       className={className}
       initial={{ opacity: 0, y: offsetY }}

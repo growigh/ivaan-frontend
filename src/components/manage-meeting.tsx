@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import { Button } from './ui/button'
 import AppearOnScroll from './appear-on-scroll'
+import Cta from './cta'
 
 export default function ManageMeeting() {
   return (
@@ -16,7 +16,9 @@ export default function ManageMeeting() {
           <p className="font-bold text-5xl lg:text-6xl mt-4">IVAAN</p>
         </div>
         <div className="hidden md:block">
-          <Button>Get early Access</Button>
+          <Cta to="#footer" className="">
+            Join the Waitlist
+          </Cta>
           <p className="text-white/70 mt-4">
             Stay on top of every conversation without breaking a sweat.
           </p>
@@ -31,7 +33,9 @@ export default function ManageMeeting() {
           height={380}
         />
         <div className="mt-18 md:hidden">
-          <Button>Join Waitlist</Button>
+          <Cta to="#footer" className="">
+            Join the Waitlist
+          </Cta>
           <p className="text-white/70 mt-4">
             Stay on top of every conversation without breaking a sweat.
           </p>

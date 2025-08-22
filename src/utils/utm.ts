@@ -17,13 +17,13 @@ export const getUTMParams = (searchParams?: URLSearchParams): UTMParams => {
   }
 
   const params = searchParams || new URLSearchParams(window.location.search)
-  
+
   return {
     utm_source: params.get('utm_source') || undefined,
     utm_medium: params.get('utm_medium') || undefined,
     utm_campaign: params.get('utm_campaign') || undefined,
     utm_term: params.get('utm_term') || undefined,
-    utm_content: params.get('utm_content') || undefined,
+    utm_content: params.get('utm_content') || undefined
   }
 }
 
@@ -33,10 +33,12 @@ export const getUTMParams = (searchParams?: URLSearchParams): UTMParams => {
  */
 export const storeUTMParams = (utmParams: UTMParams): void => {
   if (typeof window === 'undefined') return
-  
+
   // Only store if we have at least one UTM parameter
-  const hasUTMParams = Object.values(utmParams).some(value => value !== undefined)
-  
+  const hasUTMParams = Object.values(utmParams).some(
+    value => value !== undefined
+  )
+
   if (hasUTMParams) {
     localStorage.setItem('utm_params', JSON.stringify(utmParams))
   }
@@ -48,7 +50,7 @@ export const storeUTMParams = (utmParams: UTMParams): void => {
  */
 export const getStoredUTMParams = (): UTMParams => {
   if (typeof window === 'undefined') return {}
-  
+
   try {
     const stored = localStorage.getItem('utm_params')
     return stored ? JSON.parse(stored) : {}
@@ -66,7 +68,7 @@ export const getStoredUTMParams = (): UTMParams => {
 export const getCurrentUTMParams = (): UTMParams => {
   const currentParams = getUTMParams()
   const storedParams = getStoredUTMParams()
-  
+
   // Current params take priority over stored ones
   return {
     ...storedParams,

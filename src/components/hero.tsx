@@ -1,11 +1,13 @@
 import Image from 'next/image'
 import AppearOnScroll from './appear-on-scroll'
-import { CTAField } from './cta-field'
-import { Button } from './ui/button'
+import { CTAField } from './cta-form'
 
 export default function Hero() {
   return (
-    <AppearOnScroll className="text-center mt-16 sm:mt-24 px-6" amount={0.15}>
+    <AppearOnScroll
+      className="text-center mt-16 sm:mt-24 px-6"
+      amount={0.15}
+      id="hero">
       <h1 className="text-5xl md:text-6xl font-heading !leading-[120%] sm:!leading-[140%] font-semibold tracking-[2%]">
         Ivaan, Your Personal AI
         <span className="sm:block"> Meeting Assistant</span>
@@ -26,8 +28,8 @@ export default function Hero() {
         />
         <Image src="/images/more.webp" width={40} height={40} alt="More" />
       </div>
-        <CTAField />
-    
+      <CTAField />
+
       <div className="text-sm md:text-lg text-gray-500 tracking-[2%] mt-10 sm:mt-12">
         First 100 Users will get{' '}
         <span className="text-white">Lifetime 50% Off</span>
