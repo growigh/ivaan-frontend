@@ -134,9 +134,8 @@ export default function BetterMeeting() {
             muted
             playsInline
             autoPlay
-            preload="metadata"     
-            className="rounded-xl"
-          >
+            preload="metadata"
+            className="rounded-xl">
             <source src="/videos/todo.mp4" type="video/mp4" />
           </video>
         </motion.div>

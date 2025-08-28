@@ -21,12 +21,21 @@ export default function Meeting() {
           </p>
         </div>
 
-        <RotatingText
-          text={['Which meeting?', 'What to do next?', 'What was discussed?']}
-          duration={3000}
-          className="text-3xl md:text-2xl lg:text-[32px] font-semibold mt-24 xl:mt-36 2xl:mt-mt-44"
-          transition={{ duration: 0.5, ease: 'easeInOut' }}
-        />
+        <div className="flex flex-col md:flex-row mt-24 xl:mt-36 2xl:mt-mt-44 items-center gap-8 md:gap-9 lg:gap-10">
+          <Image
+            src="/images/ball.png"
+            alt="Meeting Image"
+            width={150}
+            height={150}
+            className="w-[100px] h-[100px] lg:w-[150px] lg:h-[150px]"
+          />
+          <RotatingText
+            text={['Which meeting?', 'What to do next?', 'What was discussed?']}
+            duration={3000}
+            className="text-3xl md:text-2xl lg:text-[32px] xl:text-4xl font-semibold"
+            transition={{ duration: 0.5, ease: 'easeInOut' }}
+          />
+        </div>
       </div>
 
       <div className="mt-23 md:mt-4">
