@@ -1,3 +1,4 @@
+import { GuestGuard } from "@/components/auth/auth-guard"
 import { ReactNode } from "react"
 
 interface AuthLayoutProps {
@@ -6,8 +7,10 @@ interface AuthLayoutProps {
 
 export default function AuthLayout({ children }: AuthLayoutProps) {
   return (
-    <div className="auth-layout">
-      {children}
-    </div>
+    <GuestGuard>
+      <div className="auth-layout">
+        {children}
+      </div>
+    </GuestGuard>
   )
 }

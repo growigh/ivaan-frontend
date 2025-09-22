@@ -1,6 +1,6 @@
 // Export all API functions
 export * from './config'
-export * from './earlyAccess'
+export * from './early-access'
 
 // You can add more API exports here as you create them
 // Example:

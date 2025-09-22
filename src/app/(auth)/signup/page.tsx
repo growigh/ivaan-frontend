@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
+import { authApi } from "@/lib/api/auth"
 import Link from "next/link"
 import { useState } from "react"
 
@@ -11,19 +12,10 @@ export default function SignupPage() {
   const handleGoogleSignup = async () => {
     setIsLoading(true)
     try {
-      // Placeholder API call for Google OAuth
-      console.log("Initiating Google OAuth signup...")
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      
-      // This would typically redirect to Google OAuth or handle the response
-      // For now, just log the action
-      console.log("Google signup successful (placeholder)")
-      
+      // Initiate Google OAuth login (same endpoint for both login and signup)
+      await authApi.initiateGoogleLogin()
     } catch (error) {
       console.error("Signup failed:", error)
-    } finally {
       setIsLoading(false)
     }
   }
@@ -68,7 +60,7 @@ export default function SignupPage() {
             </div>
           </CardHeader>
           <CardContent className="space-y-4">
-            <Button 
+            <Button
               onClick={handleGoogleSignup}
               disabled={isLoading}
               className="w-full h-12 bg-white hover:bg-gray-50 text-gray-900 border-0 font-medium transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
@@ -116,8 +108,8 @@ export default function SignupPage() {
             <div className="text-center">
               <p className="text-sm text-slate-400">
                 Already have an account?{" "}
-                <Link 
-                  href="/login" 
+                <Link
+                  href="/login"
                   className="text-purple-400 hover:text-purple-300 font-medium transition-colors"
                 >
                   Sign in instead

@@ -1,6 +1,6 @@
 'use server'
 
-import { UTMParams } from '../utils/utm'
+import { UTMParams } from '../../utils/utm'
 import { retoolApi } from './config'
 
 export interface EarlyAccessData {

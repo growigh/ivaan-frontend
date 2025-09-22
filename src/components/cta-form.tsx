@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import { toast } from 'sonner'
 import { z } from 'zod'
-import { submitEarlyAccess } from '../api'
+import { submitEarlyAccess } from '../lib/api'
 import { getCurrentUTMParams, storeUTMParams, UTMParams } from '../utils/utm'
 import { BorderBeam } from './magicui/border-beam'
 import { Button } from './ui/button'

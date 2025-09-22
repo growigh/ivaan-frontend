@@ -1,6 +1,7 @@
+import { UserProvider } from '@/components/contexts/user-context'
 import CONST from '@/utils/constant'
-import './globals.css'
 import { Toaster } from 'sonner'
+import './globals.css'
 
 export default function RootLayout({
   children
@@ -83,8 +84,10 @@ export default function RootLayout({
         )}
       </head>
       <body className="font-body antialiased">
-        {children}
-        <Toaster />
+        <UserProvider>
+          {children}
+          <Toaster />
+        </UserProvider>
       </body>
     </html>
   )
